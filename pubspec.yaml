@@ -6,13 +6,13 @@ publish_to: "none"
 version: 0.0.2
 
 environment:
-  sdk: ">=3.2.0 <4.0.0"
-  flutter: 3.19.6
+  sdk: ">=3.6.0 <4.0.0"
+  flutter: 3.27.4
 
 dependencies:
   autoscroll:
     path: package/autoscroll/
-  fluent_ui: ^4.7.3
+  fluent_ui: ^4.11.1
   flutter:
     sdk: flutter
   flutter_localizations:
@@ -22,15 +22,14 @@ dependencies:
   rss_dart:
     git:
       url: https://github.com/brainwo/rss.dart.git
-      ref: "d74949d"
-  shared_preferences: ^2.1.2
+  shared_preferences: ^2.5.2
   url_launcher: ^6.1.11
   yaml_edit: ^2.2.0
   youtube_api:
     path: package/youtube_api/
 
 dev_dependencies:
-  custom_lint: ^0.6.4
+  custom_lint: ^0.7.0
   extra_pedantic: ^4.0.0
   flutter_test:
     sdk: flutter

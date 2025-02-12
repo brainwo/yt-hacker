@@ -204,20 +204,24 @@ class _ListItemState extends State<ListItem> {
                 onPressed: () {
                   Clipboard.setData(ClipboardData(
                     text: widget.url,
-                  )).whenComplete(() => displayInfoBar(
-                        context,
-                        builder: (final context, final close) {
-                          return InfoBar(
-                            title: const Text('Copied'),
-                            content: const Text('URL copied to clipboard'),
-                            action: IconButton(
-                              icon: const Icon(FluentIcons.clear),
-                              onPressed: close,
-                            ),
-                            severity: InfoBarSeverity.info,
-                          );
-                        },
-                      ));
+                  )).whenComplete(() async {
+                    if (!context.mounted) return;
+
+                    return displayInfoBar(
+                      context,
+                      builder: (final context, final close) {
+                        return InfoBar(
+                          title: const Text('Copied'),
+                          content: const Text('URL copied to clipboard'),
+                          action: IconButton(
+                            icon: const Icon(FluentIcons.clear),
+                            onPressed: close,
+                          ),
+                          severity: InfoBarSeverity.info,
+                        );
+                      },
+                    );
+                  });
                 },
               ),
               MenuFlyoutItem(
@@ -262,7 +266,7 @@ class _ListItemState extends State<ListItem> {
       child: ColoredBox(
         color: switch ((_focused, _hovered)) {
           (true, _) => FluentTheme.of(context).accentColor,
-          (_, true) => Colors.white.withOpacity(0.1),
+          (_, true) => Colors.white.withValues(alpha: 0.1),
           _ => Colors.transparent,
         },
         child: Padding(
@@ -272,7 +276,7 @@ class _ListItemState extends State<ListItem> {
               (true, _) => BoxDecoration(
                   border: Border.all(
                     width: 1,
-                    color: Colors.white.withOpacity(0.5),
+                    color: Colors.white.withValues(alpha: 0.5),
                   ),
                 ),
               _ => const BoxDecoration(),

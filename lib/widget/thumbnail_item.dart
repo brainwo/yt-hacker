@@ -121,7 +121,7 @@ class _ThumbnailItemState extends State<ThumbnailItem> {
       child: ColoredBox(
         color: switch ((_focused, _hovered)) {
           (true, _) => FluentTheme.of(context).accentColor,
-          (_, true) => Colors.white.withOpacity(0.1),
+          (_, true) => Colors.white.withValues(alpha: 0.1),
           _ => Colors.transparent,
         },
         child: Padding(
@@ -131,7 +131,7 @@ class _ThumbnailItemState extends State<ThumbnailItem> {
               (true, _) => BoxDecoration(
                   border: Border.all(
                     width: 1,
-                    color: Colors.white.withOpacity(0.5),
+                    color: Colors.white.withValues(alpha: 0.5),
                   ),
                 ),
               _ => const BoxDecoration(),

@@ -103,14 +103,10 @@ class App extends StatelessWidget {
           activeColor: appTheme.primary,
           buttonTheme: ButtonThemeData(
             defaultButtonStyle: ButtonStyle(
-              foregroundColor: ButtonState.resolveWith((final states) {
-                if (states.isPressing) return Colors.white;
-                return null;
-              }),
-              backgroundColor: ButtonState.resolveWith(
+              backgroundColor: WidgetStateColor.resolveWith(
                 (final states) {
-                  if (states.isPressing) return appTheme.primary;
-                  if (states.isHovering) return appTheme.backgroundHighlight;
+                  if (states.isPressed) return appTheme.primary;
+                  if (states.isHovered) return appTheme.backgroundHighlight;
                   return appTheme.background;
                 },
               ),
@@ -128,7 +124,7 @@ class App extends StatelessWidget {
             showDuration: Duration.zero,
             waitDuration: const Duration(milliseconds: 150),
             decoration: BoxDecoration(
-              color: appTheme.background.withOpacity(0.5),
+              color: appTheme.background.withValues(alpha: 0.5),
               borderRadius: BorderRadius.circular(4),
             ),
             textStyle: const TextStyle(fontSize: 14),

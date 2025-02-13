@@ -1,6 +1,6 @@
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import '../l10n/app_localizations.dart';
 
 // TODO: use Regex to match known errors
 // YouTube Data API v3 has not been used in project 144809266352 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/youtube.googleapis.com/overview?project=144809266352 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.

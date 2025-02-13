@@ -1,6 +1,5 @@
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:youtube_api/youtube_api.dart';
@@ -8,6 +7,7 @@ import 'package:youtube_api/youtube_api.dart';
 import 'const.dart';
 import 'helper/command_parser.dart';
 import 'intent.dart';
+import 'l10n/app_localizations.dart';
 import 'model/config.dart';
 import 'model/setting_options.dart';
 import 'model/state.dart';

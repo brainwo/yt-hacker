@@ -49,3 +49,6 @@ data.json
 compile_commands.json
 flutter_jank*.json
 flutter_*.png
+
+# Source generated localizaed messages
+app_localizations*.dart
